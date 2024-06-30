@@ -3,8 +3,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import javax.swing.*;
 import java.time.Duration;
 
 public class loginTest {
@@ -18,54 +16,57 @@ public class loginTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://staging-scweb.arcapps.org/");
 
+        //        Login functionalities step-1 start
         WebElement inputEmail = driver.findElement(By.name("username"));
         inputEmail.sendKeys("tester");
         WebElement inputPassword = driver.findElement(By.name("password"));
         inputPassword.sendKeys("tester2023!");
         WebElement loginBtn = driver.findElement(By.xpath("//*[@id='root']/div[2]/div[2]/div/div/div[3]/form/div/div[4]/button"));
         loginBtn.click();
+        //        Login functionalities step-1 end
 
+        //        Login functionalities step-2 start
         WebElement inputProvince = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div/div[3]/form/div[1]/div[1]/select"));
         inputProvince.sendKeys("Lusaka");
         WebElement inputDistrict = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div/div[3]/form/div[1]/div[2]/select"));
         inputDistrict.sendKeys("Lusaka");
         WebElement inputFacility = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div/div[3]/form/div[1]/div[3]/div/div[2]/input"));
         inputFacility.sendKeys("Dr. Watson Dental Clinic");
-
-
         Thread.sleep(1500);
-
+        //        code for clicking on facilities suggestions in Login functionalities step-2
         WebElement suggestion = driver.findElement(By.xpath("//*[text()='Dr. Watson Dental Clinic']"));
         suggestion.click();
 
         WebElement inputEnterBtn = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div/div[3]/form/div[3]/button"));
         inputEnterBtn.click();
+        //        Login functionalities step-2 end
 
+        //        Searching by NRC start
         Thread.sleep(1500);
-
         WebElement inputNrc = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div[1]/button[2]"));
         inputNrc.click();
         WebElement inputNrcValue = driver.findElement(By.name("nrc"));
         inputNrcValue.sendKeys("111111/11/1");
         WebElement inputSearchNrc = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/form/div[2]/button"));
         inputSearchNrc.click();
+        //        Searching by NRC end
 
+        // clicking on attend to patient
         Thread.sleep(1500);
-
         WebElement inputAttendToPatient = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[3]/div[2]/div/div/div[2]/div[2]/button[4]"));
         inputAttendToPatient.click();
 
+        // clicking on Vitals
         Thread.sleep(1500);
-
         WebElement inputVital = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div/div[2]/div/div[2]/a/div"));
         inputVital.click();
 
+        // clicking on add vitals
         Thread.sleep(1500);
         WebElement inputAddVital = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div/div[2]/div[1]/div/div/div/div/div[1]/div/button"));
         inputAddVital.click();
-
+        // patient information saving part start
         Thread.sleep(2000);
-
         WebElement inputPatientWeight = driver.findElement(By.name("weight"));
         inputPatientWeight.clear();
         inputPatientWeight.sendKeys("68");
@@ -110,29 +111,11 @@ public class loginTest {
         inputPatientHcScore.sendKeys("NULL");
         WebElement inputPatientComments = driver.findElement(By.name("comment"));
         inputPatientComments.sendKeys("abcd");
+        // patient information saving parts end
 
+        Thread.sleep(50000);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        Thread.sleep(50000);
-//
-//            driver.quit();
+            driver.quit();
 
     }
 }
