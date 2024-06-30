@@ -49,9 +49,15 @@ public class loginTest {
         inputNrcValue.sendKeys("111111/11/1");
         WebElement inputSearchNrc = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/form/div[2]/button"));
         inputSearchNrc.click();
-        Thread.sleep(50000);
 
-            driver.quit();
+        Thread.sleep(1500);
+
+        WebElement inputAttendToPatient = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[3]/div[2]/div/div/div[2]/div[2]/button[4]"));
+        inputAttendToPatient.click();
+
+//        Thread.sleep(50000);
+//
+//            driver.quit();
 
     }
 }
