@@ -66,40 +66,57 @@ public class loginTest {
         WebElement inputAddVital = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div/div[2]/div[1]/div/div/div/div/div[1]/div/button"));
         inputAddVital.click();
         // patient information saving part start
+        // waiting time
         Thread.sleep(2000);
+        // weight
         WebElement inputPatientWeight = driver.findElement(By.name("weight"));
         inputPatientWeight.clear();
         inputPatientWeight.sendKeys("68");
-
+        // height
         WebElement inputPatientHeight = driver.findElement(By.name("height"));
         inputPatientHeight.clear();
         inputPatientHeight.sendKeys("168");
-
+        // Temperature (c)
         WebElement inputPatientTemperature = driver.findElement(By.name("temperature"));
         inputPatientTemperature.sendKeys("36");
 
-        WebElement inputPatientSystolic = driver.findElement(By.name("systolic"));
-        inputPatientSystolic.sendKeys("132");
-        WebElement inputPatientDiastolic= driver.findElement(By.name("diastolic"));
-        inputPatientDiastolic.sendKeys("67");
-
+//        // Systolic (mmHg)
+//        WebElement inputPatientSystolic = driver.findElement(By.name("systolic"));
+//        inputPatientSystolic.sendKeys("132");
+//        // Diastolic (mmHg)
+//        WebElement inputPatientDiastolic= driver.findElement(By.name("diastolic"));
+//        inputPatientDiastolic.sendKeys("67");
+        // Pulse rate
         WebElement inputPatientPulseRate = driver.findElement(By.name("pulseRate"));
         inputPatientPulseRate.sendKeys("62");
+        // Respiratory
         WebElement inputPatientRespiratory = driver.findElement(By.name("respiratoryRate"));
         inputPatientRespiratory.sendKeys("19");
+        // Oxygen saturation
         WebElement inputPatientOxygenSaturation = driver.findElement(By.name("oxygenSaturation"));
         inputPatientOxygenSaturation.sendKeys("99");
+        // Abdominal circumference
         WebElement inputPatientAbdominalCircumference = driver.findElement(By.name("abdominalCircumference"));
         inputPatientAbdominalCircumference.sendKeys("0");
-
-        WebElement inputPatientInfoSave = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div/div[2]/div/form/div[2]/div/button[2]"));
-        inputPatientInfoSave.click();
-
+        // BP Unrecordable
         WebElement inputPatientDiastolicIfUnrecordable = driver.findElement(By.name("diastolicIfUnrecordable"));
-        inputPatientDiastolicIfUnrecordable.sendKeys("Unknown");
+        inputPatientDiastolicIfUnrecordable.sendKeys("Too High");
         Thread.sleep(1500);
         WebElement suggestions = driver.findElement(By.name("unknownSuggestionName"));
         suggestions.click();
+        // waiting time
+        Thread.sleep(2000);
+        // Patient information save
+        WebElement inputPatientInfoSave = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div/div[2]/div/form/div[2]/div/button[2]"));
+        inputPatientInfoSave.click();
+
+        // waiting time
+        Thread.sleep(1500);
+        // quite the driver
+        driver.quit();
+
+
+
 
         WebElement inputpatientMuac = driver.findElement(By.name("muac"));
         inputpatientMuac.sendKeys("NULL");
@@ -113,9 +130,6 @@ public class loginTest {
         inputPatientComments.sendKeys("abcd");
         // patient information saving parts end
 
-        Thread.sleep(50000);
-
-            driver.quit();
 
     }
 }
