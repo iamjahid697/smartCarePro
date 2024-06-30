@@ -55,6 +55,10 @@ public class loginTest {
         WebElement inputAttendToPatient = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[3]/div[2]/div/div/div[2]/div[2]/button[4]"));
         inputAttendToPatient.click();
 
+        Thread.sleep(1500);
+
+        WebElement inputVital = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div/div[2]/div/div[2]/a/div"));
+        inputVital.click();
 //        Thread.sleep(50000);
 //
 //            driver.quit();
