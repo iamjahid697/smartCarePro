@@ -64,6 +64,54 @@ public class loginTest {
         WebElement inputAddVital = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div/div[2]/div[1]/div/div/div/div/div[1]/div/button"));
         inputAddVital.click();
 
+        Thread.sleep(2000);
+
+        WebElement inputPatientWeight = driver.findElement(By.name("weight"));
+        inputPatientWeight.clear();
+        inputPatientWeight.sendKeys("68");
+
+        WebElement inputPatientHeight = driver.findElement(By.name("height"));
+        inputPatientHeight.clear();
+        inputPatientHeight.sendKeys("168");
+
+        WebElement inputPatientTemperature = driver.findElement(By.name("temperature"));
+        inputPatientTemperature.sendKeys("36");
+
+        WebElement inputPatientSystolic = driver.findElement(By.name("systolic"));
+        inputPatientSystolic.sendKeys("132");
+        WebElement inputPatientDiastolic= driver.findElement(By.name("diastolic"));
+        inputPatientDiastolic.sendKeys("67");
+
+        WebElement inputPatientPulseRate = driver.findElement(By.name("pulseRate"));
+        inputPatientPulseRate.sendKeys("62");
+        WebElement inputPatientRespiratory = driver.findElement(By.name("respiratoryRate"));
+        inputPatientRespiratory.sendKeys("19");
+        WebElement inputPatientOxygenSaturation = driver.findElement(By.name("oxygenSaturation"));
+        inputPatientOxygenSaturation.sendKeys("99");
+        WebElement inputPatientAbdominalCircumference = driver.findElement(By.name("abdominalCircumference"));
+        inputPatientAbdominalCircumference.sendKeys("0");
+
+        WebElement inputPatientInfoSave = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div/div[2]/div/form/div[2]/div/button[2]"));
+        inputPatientInfoSave.click();
+
+        WebElement inputPatientDiastolicIfUnrecordable = driver.findElement(By.name("diastolicIfUnrecordable"));
+        inputPatientDiastolicIfUnrecordable.sendKeys("Unknown");
+        Thread.sleep(1500);
+        WebElement suggestions = driver.findElement(By.name("unknownSuggestionName"));
+        suggestions.click();
+
+        WebElement inputpatientMuac = driver.findElement(By.name("muac"));
+        inputpatientMuac.sendKeys("NULL");
+        WebElement inputPatientMuacScore = driver.findElement(By.name("muacScore"));
+        inputPatientMuacScore.sendKeys("-1");
+        WebElement inputPatientHeadCircumference = driver.findElement(By.name("headCircumference"));
+        inputPatientHeadCircumference.sendKeys("NULL");
+        WebElement inputPatientHcScore = driver.findElement(By.name("hcScore"));
+        inputPatientHcScore.sendKeys("NULL");
+        WebElement inputPatientComments = driver.findElement(By.name("comment"));
+        inputPatientComments.sendKeys("abcd");
+
+
 
 
 
