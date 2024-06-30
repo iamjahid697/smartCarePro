@@ -33,7 +33,7 @@ public class loginTest {
         inputFacility.sendKeys("Dr. Watson Dental Clinic");
 
 
-        Thread.sleep(1000);
+        Thread.sleep(1500);
 
         WebElement suggestion = driver.findElement(By.xpath("//*[text()='Dr. Watson Dental Clinic']"));
         suggestion.click();
@@ -41,6 +41,14 @@ public class loginTest {
         WebElement inputEnterBtn = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div/div[3]/form/div[3]/button"));
         inputEnterBtn.click();
 
+        Thread.sleep(1500);
+
+        WebElement inputNrc = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div[1]/button[2]"));
+        inputNrc.click();
+        WebElement inputNrcValue = driver.findElement(By.name("nrc"));
+        inputNrcValue.sendKeys("111111/11/1");
+        WebElement inputSearchNrc = driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/form/div[2]/button"));
+        inputSearchNrc.click();
         Thread.sleep(50000);
 
             driver.quit();
